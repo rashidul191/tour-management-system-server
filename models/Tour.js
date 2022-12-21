@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// schema
 const tourSchema = mongoose.Schema(
   {
     img: {
@@ -33,7 +34,7 @@ const tourSchema = mongoose.Schema(
       type: String,
       required: true,
       enum: {
-        values: ["couple-package", "family-package", "domestic-package"],
+        values: ["couple-package", "family-package", "domestic-packages"],
         message: "Status can't be {VALUE}",
       },
     },
@@ -51,5 +52,6 @@ const tourSchema = mongoose.Schema(
   { timestamps: true }
 );
 
+// model
 const Tour = mongoose.model("tour", tourSchema);
 module.exports = Tour;
